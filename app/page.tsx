@@ -1,5 +1,3 @@
-import AboutBook from "./components/AboutBook";
-
 import Author from "./components/Author";
 import BonusSection from "./components/BonusSection";
 import Faq from "./components/Faq";
