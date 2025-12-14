@@ -1,6 +1,5 @@
 import AboutBook from "./components/AboutBook";
-import AboutUs from "./components/AboutUs";
-import AboutUsSection from "./components/AboutUs";
+
 import Author from "./components/Author";
 import BonusSection from "./components/BonusSection";
 import Faq from "./components/Faq";
@@ -13,12 +12,8 @@ import WhatYouWillLearn from "./components/WhatYouWillLearn";
 export default function Home() {
   return (
     <main>
-      <BonusSection />
       <Hero />
-      <AboutUs />
-      <AboutBook />
-      <WhatYouWillLearn />
-      <WhatMakesItDifferent />
+      <BonusSection />
       <Author />
       <Testimonials />
       <Faq />
