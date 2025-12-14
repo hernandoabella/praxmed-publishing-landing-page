@@ -18,9 +18,7 @@ const Footer = () => {
               priority
             />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-[#8DA9FF] bg-clip-text text-transparent tracking-wide">
-            PRAXMED Publishing
-          </h2>
+          
           <p className="text-lg text-white/80 mt-3 max-w-2xl text-center">
             Bringing knowledge to healthcare professionals worldwide
           </p>
