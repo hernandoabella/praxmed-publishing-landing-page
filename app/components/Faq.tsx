@@ -126,43 +126,6 @@ const Faq = () => {
           ))}
         </div>
 
-        {/* Quick Answer Summary */}
-        <div className="bg-gradient-to-r from-white to-blue-50 rounded-2xl p-8 border border-blue-100 mb-12">
-          <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
-            Quick Summary
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                title: "Clinical Cases", 
-                answer: "3 detailed real cases", 
-                icon: "📋" 
-              },
-              { 
-                title: "Glossary", 
-                answer: "1,000+ medical terms", 
-                icon: "📖" 
-              },
-              { 
-                title: "Audio Included", 
-                answer: "Lifetime MP3 access", 
-                icon: "🎧" 
-              },
-              { 
-                title: "Skill Level", 
-                answer: "Intermediate + Beginners", 
-                icon: "📈" 
-              }
-            ].map((item, index) => (
-              <div key={index} className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                <div className="text-2xl mb-2">{item.icon}</div>
-                <div className="font-semibold text-[#002EC1] mb-1">{item.title}</div>
-                <div className="text-sm text-gray-600">{item.answer}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Contact CTA */}
         <div className="bg-gradient-to-r from-[#002EC1] to-[#0B316D] rounded-2xl p-8 md:p-10 text-white text-center">
           <div className="max-w-2xl mx-auto">
@@ -193,25 +156,7 @@ const Faq = () => {
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-[#002EC1] mb-2">30-Day</div>
-            <div className="text-sm text-gray-600">Money-Back Guarantee</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-[#002EC1] mb-2">24/7</div>
-            <div className="text-sm text-gray-600">Digital Access</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-[#002EC1] mb-2">Lifetime</div>
-            <div className="text-sm text-gray-600">Free Updates</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-[#002EC1] mb-2">Professional</div>
-            <div className="text-sm text-gray-600">Support</div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
