@@ -78,7 +78,6 @@ export default function HeroSection() {
                   <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
                   Limited Time Offer
                 </span>
-                <span>Includes 3 exclusive bonuses (worth $147)</span>
               </p>
             </div>
             
