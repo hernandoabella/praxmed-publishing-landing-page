@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { Headphones, Download, CheckCircle, Volume2, PlayCircle, Smartphone, Car, Brain } from "lucide-react";
 
 const AudioDownload = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState(0);
+  const [currentFile, setCurrentFile] = useState("");
+
   const audioFeatures = [
     "Real clinical dialogues",
     "Essential medical phrases",
@@ -19,6 +24,56 @@ const AudioDownload = () => {
     "Reinforce what you learn in the book",
     "Train your ear for real patient interactions",
   ];
+
+  const handleDownloadAll = async () => {
+    setIsDownloading(true);
+    setDownloadProgress(0);
+    setCurrentFile("");
+
+    // Total number of files (40)
+    const totalFiles = 40;
+    
+    // Download files sequentially from audio1.mp3 to audio40.mp3
+    for (let i = 1; i <= totalFiles; i++) {
+      const fileName = `audio${i}.opus`;
+      const fileUrl = `/audio/${fileName}`;
+      
+      try {
+        setCurrentFile(`Downloading: ${fileName}`);
+        
+        // Create hidden download link
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName;
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Update progress
+        const progress = Math.round((i / totalFiles) * 100);
+        setDownloadProgress(progress);
+        
+        // Wait between downloads to prevent browser issues
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+      } catch (error) {
+        console.error(`Failed to download ${fileName}:`, error);
+        setCurrentFile(`Failed: ${fileName}`);
+      }
+    }
+
+    setIsDownloading(false);
+    setDownloadProgress(100);
+    setCurrentFile("All files downloaded!");
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      setDownloadProgress(0);
+      setCurrentFile("");
+    }, 2000);
+  };
 
   return (
     <section className="w-full max-w-4xl mx-auto px-6 py-12">
@@ -57,26 +112,59 @@ const AudioDownload = () => {
                 <div className="p-3 bg-[#0B8288]/10 rounded-xl">
                   <Volume2 className="w-6 h-6 text-[#0B8288]" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-lg font-bold text-gray-900">
-                    Complete Audio Library (MP3 – ZIP)
+                    Complete Audio Library 
                   </h3>
                   <p className="text-sm text-gray-600 mt-1">
-                    Instant download • Lifetime access • Mobile friendly
+                    Click to download all audio files
                   </p>
+                  
+                  {isDownloading && currentFile && (
+                    <div className="mt-3 space-y-2">
+                      <p className="text-sm font-medium text-[#0B8288]">
+                        {currentFile}
+                      </p>
+                      <div className="flex justify-between text-xs text-gray-600 mb-1">
+                        <span>Progress</span>
+                        <span>{downloadProgress}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div 
+                          className="bg-[#0B8288] h-2 rounded-full transition-all duration-300"
+                          style={{ width: `${downloadProgress}%` }}
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {!isDownloading && currentFile && (
+                    <div className="mt-3">
+                      <p className="text-sm font-medium text-green-600">
+                        ✓ {currentFile}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <a
-                href="/audio/medical-spanish-audio.zip"
-                download
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3 bg-gradient-to-r from-[#0B8288] to-[#142B47] text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-[#0B8288]/30 hover:scale-[1.02] transition-all duration-300"
+              <button
+                onClick={handleDownloadAll}
+                disabled={isDownloading}
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-3 bg-gradient-to-r from-[#0B8288] to-[#142B47] text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-[#0B8288]/30 hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed min-w-[180px]"
               >
                 <Download className="w-5 h-5" />
-                <span>Download Audio</span>
+                <span className="text-center">
+                  {isDownloading 
+                    ? `Downloading...` 
+                    : 'Download Audio Files'
+                  }
+                </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#142B47] to-[#0B8288] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
+              </button>
             </div>
+            
+
           </div>
         </div>
 
