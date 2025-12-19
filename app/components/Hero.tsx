@@ -34,7 +34,7 @@ export default function HeroSection() {
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl">
               Learn <strong className="text-[#0B8288]">real medical phrases</strong>, specialized vocabulary, and 
               clinical scenarios in Spanish to effectively work with patients and healthcare teams.
-              Bridge the language gap and provide better care.
+        
             </p>
           </div>
 
@@ -112,25 +112,34 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Book Image Section */}
+        {/* Book Image Section - ENLARGED */}
         <div className="relative flex justify-center lg:justify-end">
-          {/* Background decorative elements */}
-          <div className="absolute -top-6 -right-6 w-64 h-64 bg-[#0B8288]/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-6 -left-6 w-56 h-56 bg-[#142B47]/10 rounded-full blur-3xl"></div>
+          {/* Background decorative elements - Made larger */}
+          <div className="absolute -top-10 -right-10 w-96 h-96 bg-[#0B8288]/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-[#142B47]/10 rounded-full blur-3xl"></div>
           
-          {/* Book Container */}
-          <div className="relative group">
-            {/* Shadow effect */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-8 bg-black/10 blur-xl rounded-full"></div>
+          {/* Book Container - Made larger */}
+          <div className="relative group w-full">
+            {/* Shadow effect - Made larger */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-[85%] h-12 bg-black/15 blur-xl rounded-full"></div>
             
-            {/* Book Image */}
-            <div className="relative">
-              <img
-                src="/book-mockup.jpg" // Replace with your actual book image
-                alt="Medical Spanish Guide Book - Complete language resource for healthcare providers"
-                className="w-full max-w-md lg:max-w-lg transform group-hover:rotate-[-2deg] group-hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#0B8288]/20 rounded-2xl"
-              />
-              
+            {/* Book Image - ENLARGED SIGNIFICANTLY */}
+            <div className="relative flex justify-center">
+              <div className="relative w-full max-w-2xl">
+                {/* Glowing effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B8288]/20 to-[#142B47]/20 rounded-3xl blur-2xl transform scale-105 group-hover:scale-110 transition-transform duration-500"></div>
+                
+                {/* Book Image - Now much larger */}
+                <img
+                  src="/book-mockup.png"
+                  alt="Medical Spanish Guide Book - Complete language resource for healthcare providers"
+                  className="relative w-full max-w-2xl transform group-hover:rotate-[-1.5deg] group-hover:scale-[1.03] transition-all duration-500 shadow-2xl shadow-[#0B8288]/30 rounded-3xl border-8 border-white"
+                  style={{
+                    maxHeight: "80vh",
+                    objectFit: "contain"
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
