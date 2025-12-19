@@ -35,7 +35,7 @@ const AudioDownload = () => {
     
     // Download files sequentially from audio1.mp3 to audio40.mp3
     for (let i = 1; i <= totalFiles; i++) {
-      const fileName = `audio${i}.opus`;
+      const fileName = `AUDIO-TRACK-${i}.opus`;
       const fileUrl = `/audio/${fileName}`;
       
       try {
