@@ -3,10 +3,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A1628] px-6 py-16 md:py-20 text-white relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(circle,rgba(11,130,136,0.06),transparent_70%)] blur-3xl pointer-events-none" />
-
+    <footer className="bg-[#0F2137] px-6 py-16 md:py-20 text-white relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="mb-12 flex flex-col items-center justify-between gap-10 lg:flex-row">
           <div className="text-center lg:text-left">

@@ -3,7 +3,7 @@ import BookGridPage from "../components/BookGridPage";
 const books = [
   {
     title: "Juan Cigarron",
-    image: "/juan-cigarron.jpg",
+    image: "/books-frontpage/juan-cigarron.jpg",
     description:
       "BILINGUAL SPANISH - ENGLISH STORIES FOR KIDS 7 - 12",
     accent: "#0B8288",
@@ -20,7 +20,7 @@ const books = [
   },
   {
     title: "Cuentos Para Dormir",
-    image: "/cuentos-para-dormir.png",
+    image: "/books-frontpage/cuentos-para-dormir.png",
     description:
       "A cozy bedtime collection created for children and families who love gentle Spanish stories before sleep.",
     accent: "#E8773A",

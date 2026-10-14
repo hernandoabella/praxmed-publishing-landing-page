@@ -4,7 +4,7 @@ import BonusResources from "../components/BonusResources";
 const books = [
   {
     title: "Anxious Attachment Workbook For Parents",
-    image: "/anxius.jpg",
+    image: "/books-frontpage/anxius-attachment-workbook.jpg",
     description:
       "A supportive workbook for parents who want calmer responses, more emotional safety, and stronger connection at home.",
     accent: "#514189",
@@ -17,7 +17,7 @@ const books = [
   },
   {
     title: "Anger Management for Explosive Parents",
-    image: "/book-mockup2.jpg",
+    image: "/books-frontpage/anger-managment-for-explosive-parents.jpg",
     description:
       "Tools and step-by-step guidance for breaking yelling patterns and repairing trust after conflict.",
     accent: "#264C62",
@@ -30,7 +30,7 @@ const books = [
   },
   {
     title: "Manejo de la Ira Para Padres Explosivos",
-    image: "/manejo-de-la-ira.jpg",
+    image: "/books-frontpage/manejo-de-la-ira-para-padres-explosivos.jpg",
     description:
       "A practical Spanish-language guide for parents who want to regulate anger, stop yelling, and reconnect with their children.",
     accent: "#E8773A",
@@ -43,7 +43,7 @@ const books = [
   },
   {
     title: "Breaking Generational Trauma for Parents",
-    image: "/breaking-generational-trauma-for-parents.jpg",
+    image: "/books-frontpage/breaking-generational-trauma-for-parents.jpg",
     description:
       "A parent-focused guide for recognizing inherited patterns, building healthier responses, and creating a safer family dynamic.",
     accent: "#0B8288",
@@ -56,7 +56,7 @@ const books = [
   },
   {
     title: "Raising Emotionally Intelligent Children",
-    image: "/raising.jpg",
+    image: "/books-frontpage/raising-emotionally-intelligent-children.jpg",
     description:
       "A practical guide for helping parents nurture empathy, emotional awareness, and confidence in everyday family life.",
     accent: "#1A7A8A",

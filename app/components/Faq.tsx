@@ -92,15 +92,15 @@ export default function Faq() {
   return (
     <section ref={sectionRef} className="py-24 bg-[#f8faff] relative overflow-hidden">
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-teal-100/40 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-[#0B8288]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-[#0B35C3]/5 rounded-full blur-3xl" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="faq-head text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#0B8288]/10 px-4 py-1.5 rounded-full mb-4">
-            <span className="text-[#0B8288] text-xs font-semibold tracking-wider uppercase">FAQ</span>
+          <div className="inline-flex items-center gap-2 bg-[#0B35C3]/10 px-4 py-1.5 rounded-full mb-4">
+            <span className="text-[#0B35C3] text-xs font-semibold tracking-wider uppercase">FAQ</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
-            Common <span className="text-[#0B8288]">Questions</span>
+            Common <span className="text-[#0B35C3]">Questions</span>
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto">
             Everything you need to know about the Medical Spanish for Healthcare Professionals book.
@@ -115,8 +115,8 @@ export default function Faq() {
                 key={index}
                 className={`faq-item group transition-[background-color,border-color,box-shadow,color] duration-500 rounded-2xl border
                   ${isOpen
-                    ? "bg-white border-[#0B8288] shadow-[0_12px_40px_rgba(11,130,136,0.08)]"
-                    : "bg-white/60 border-gray-100 hover:border-[#0B8288]/30 hover:bg-white"}`}
+                    ? "bg-white border-[#0B35C3] shadow-[0_12px_40px_rgba(11,53,195,0.08)]"
+                    : "bg-white/60 border-gray-100 hover:border-[#0B35C3]/30 hover:bg-white"}`}
               >
                 <button
                   onClick={() => toggle(index)}
@@ -124,18 +124,17 @@ export default function Faq() {
                 >
                   <div className="flex items-center gap-4">
                     <div className={`p-3 rounded-xl transition-all duration-500 
-                      ${isOpen ? "bg-[#0B8288] text-white" : "bg-white text-[#0B8288] shadow-sm border border-gray-100"}`}>
+                      ${isOpen ? "bg-[#0B35C3] text-white" : "bg-white text-[#0B35C3] shadow-sm border border-gray-100"}`}>
                       {getIcon(index)}
                     </div>
-                    <h3 className={`text-base md:text-lg font-bold transition-colors duration-300 
-                      ${isOpen ? "text-gray-900" : "text-gray-700"}`}>
+                    <h3 className="text-base md:text-lg font-bold text-[#0B35C3] transition-colors duration-300">
                       {faq.question}
                     </h3>
                   </div>
 
                   <div className={`shrink-0 transition-all duration-500 rounded-full p-1.5 
-                    ${isOpen ? "bg-[#0B8288]/10 rotate-180" : "bg-gray-50 group-hover:bg-[#0B8288]/5"}`}>
-                    <ChevronDown className={`w-5 h-5 ${isOpen ? "text-[#0B8288]" : "text-gray-400"}`} />
+                    ${isOpen ? "bg-[#0B35C3]/10 rotate-180" : "bg-gray-50 group-hover:bg-[#0B35C3]/5"}`}>
+                    <ChevronDown className={`w-5 h-5 ${isOpen ? "text-[#0B35C3]" : "text-gray-400"}`} />
                   </div>
                 </button>
 

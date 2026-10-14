@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import SalesChat from "./components/SalesChat";
 import ScrollSync from "./components/ScrollSync";
 import "./globals.css";
 
@@ -42,10 +41,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <Header />
           <div className="flex-1">{children}</div>
-          <div className="h-16 md:h-24 bg-gradient-to-b from-transparent to-[#0A1628]" />
           <Footer />
-          {/* Floating Sales Chat Widget — available 24/7 on all pages */}
-          <SalesChat key="floating-chat" />
         </div>
 
         {/* Keeps scroll-reveal animations firing after images/fonts load */}

@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AudioDownload = () => {
+const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [currentFile, setCurrentFile] = useState("");
@@ -70,7 +70,7 @@ const AudioDownload = () => {
   };
 
   return (
-    <section ref={containerRef} className="w-full bg-[#0F2137] py-16 md:py-24 px-6">
+    <section ref={containerRef} className={`w-full ${transparent ? "bg-transparent" : "bg-[#0F2137]"} py-16 md:py-24 px-6`}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}

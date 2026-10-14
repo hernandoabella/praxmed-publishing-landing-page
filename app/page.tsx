@@ -1,4 +1,3 @@
-import Author from "./components/Author";
 import BreakingGenerationalTraumaSection from "./components/BreakingGenerationalTraumaSection";
 import HealingInnerChildSection from "./components/HealingInnerChildSection";
 import BookGridPage from "./components/BookGridPage";
@@ -11,21 +10,10 @@ import Nwesletter from "./components/Nwesletter";
 import RaisingEISection from "./components/Raisingeisection";
 import Testimonials from "./components/Testimonials";
 
-/** Smooth gradient divider between sections with contrasting backgrounds */
-function TransitionDivider({ from, to }: { from: string; to: string }) {
-  return (
-    <div
-      aria-hidden
-      className="h-16 md:h-20 w-full"
-      style={{ background: `linear-gradient(180deg, ${from} 0%, ${to} 100%)` }}
-    />
-  );
-}
-
 const featuredBooks = [
   {
     title: "Raising Emotionally Intelligent Children",
-    image: "/raising.jpg",
+    image: "/books-frontpage/raising-emotionally-intelligent-children.jpg",
     description:
       "Practical strategies for helping children build empathy, resilience, and confidence in everyday family life.",
     accent: "#1A7A8A",
@@ -38,7 +26,7 @@ const featuredBooks = [
   },
   {
     title: "Anxious Attachment Workbook For Parents",
-    image: "/anxius.jpg",
+    image: "/books-frontpage/anxius-attachment-workbook.jpg",
     description:
       "A supportive workbook for parents who want calmer responses, more emotional safety, and stronger connection at home.",
     accent: "#514189",
@@ -51,7 +39,7 @@ const featuredBooks = [
   },
   {
     title: "Anger Management for Explosive Parents",
-    image: "/book-mockup2.jpg",
+    image: "/books-frontpage/anger-managment-for-explosive-parents.jpg",
     description:
       "A practical guide for breaking yelling patterns, repairing trust, and responding with more calm and consistency.",
     accent: "#264C62",
@@ -64,7 +52,7 @@ const featuredBooks = [
   },
   {
     title: "Manejo de la Ira Para Padres Explosivos",
-    image: "/manejo-de-la-ira.jpg",
+    image: "/books-frontpage/manejo-de-la-ira-para-padres-explosivos.jpg",
     description:
       "The Spanish-language edition for parents who want to regulate anger, stop yelling, and reconnect with their children.",
     accent: "#E8773A",
@@ -77,7 +65,7 @@ const featuredBooks = [
   },
   {
     title: "Breaking Generational Trauma for Parents",
-    image: "/breaking-generational-trauma-for-parents.jpg",
+    image: "/books-frontpage/breaking-generational-trauma-for-parents.jpg",
     description:
       "A parent-focused guide for recognizing inherited patterns, building healthier responses, and creating a safer family dynamic.",
     accent: "#0B8288",
@@ -90,7 +78,7 @@ const featuredBooks = [
   },
   {
     title: "Healing Your Inner Child",
-    image: "/ebook-portada-healing-your-inner-child.jpg",
+    image: "/books-frontpage/healing-your-inner-child.jpg",
     description:
       "A compassionate guide to understanding and reparenting your inner child, breaking free from old patterns, and building a life rooted in self-worth and emotional freedom.",
     accent: "#D96B2B",
@@ -101,34 +89,56 @@ const featuredBooks = [
       },
     ],
   },
-
+  {
+    title: "Healing Attachment Wounds",
+    image: "/books-frontpage/healing-attachment-wounds.jpg",
+    description:
+      "A trauma-informed guide to understanding attachment injuries, calming relationship triggers, and rebuilding secure, trusting connections.",
+    accent: "#3E6B8A",
+    actions: [
+      {
+        label: "Get on Amazon",
+        url: "#",
+      },
+    ],
+  },
+  {
+    title: "Healing Toxic Shame",
+    image: "/books-frontpage/healing-toxic-shame.jpg",
+    description:
+      "A compassionate path to releasing deep-seated shame, quieting the inner critic, and reclaiming a resilient sense of self-worth.",
+    accent: "#7A5C8A",
+    actions: [
+      {
+        label: "Get on Amazon",
+        url: "#",
+      },
+    ],
+  },
 ];
 
 export default function Home() {
   return (
     <main className="bg-white">
-      <Hero />
-      <BonusSection />
-      <TransitionDivider from="#0F2137" to="#fffdf7" />
       <BookGridPage
         eyebrow="Featured Library"
         title="Explore the full book collection."
         description="See the complete catalog side by side, with direct purchase links for every title."
         books={featuredBooks}
+        whiteBackground
       />
-      <TransitionDivider from="#eef7f6" to="#ffffff" />
       <Hero2 />
       <RaisingEISection />
       <Hero3 />
       <BreakingGenerationalTraumaSection />
       <HealingInnerChildSection />
-      <TransitionDivider from="#FBF7F0" to="#0F2137" />
-      <Testimonials />
-      <TransitionDivider from="#0F2137" to="#f8faff" />
       <Faq />
       <Nwesletter />
-      <TransitionDivider from="#0F2137" to="#fdfdfd" />
-      <Author />
+      <div className="bg-[#0F2137]">
+        <Hero />
+        <BonusSection transparent />
+        <Testimonials transparent />
+      </div>
     </main>
   );
 }

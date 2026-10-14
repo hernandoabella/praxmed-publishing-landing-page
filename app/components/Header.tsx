@@ -14,6 +14,7 @@ import {
   FaLaptop,
   FaNewspaper,
   FaHeadphones,
+  FaEnvelope,
   FaChevronDown,
 } from "react-icons/fa";
 
@@ -39,6 +40,13 @@ const programmingLink = {
   external: true,
 };
 
+// Contact (mailto link)
+const contactLink = {
+  href: "mailto:contact@praxmedpublishing.com",
+  label: "Contact",
+  icon: <FaEnvelope className="h-3.5 w-3.5" />,
+};
+
 // All nav items for mobile menu
 const mobileNavItems: Array<{
   href?: string;
@@ -54,6 +62,7 @@ const mobileNavItems: Array<{
     children: bookCategories,
   },
   programmingLink,
+  contactLink,
 ];
 
 export default function Header() {
@@ -104,8 +113,8 @@ export default function Header() {
               href={item.href}
               className={`flex items-center border px-4 text-sm font-medium transition ${
                 isActive(item.href)
-                  ? "border-[#0B8288] bg-[#0B8288] text-white"
-                  : "border-slate-200 text-slate-700 hover:border-[#0B8288] hover:text-[#0B8288]"
+                  ? "border-[#0B35C3] bg-[#0B35C3] text-white"
+                  : "border-slate-200 text-slate-700 hover:border-[#0B35C3] hover:text-[#0B35C3]"
               }`}
               style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
             >
@@ -123,8 +132,8 @@ export default function Header() {
               href="/childrens-books"
               className={`flex items-center border px-4 text-sm font-medium transition ${
                 isBooksActive()
-                  ? "border-[#0B8288] bg-[#0B8288] text-white"
-                  : "border-slate-200 text-slate-700 hover:border-[#0B8288] hover:text-[#0B8288]"
+                  ? "border-[#0B35C3] bg-[#0B35C3] text-white"
+                  : "border-slate-200 text-slate-700 hover:border-[#0B35C3] hover:text-[#0B35C3]"
               }`}
               style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
             >
@@ -147,8 +156,8 @@ export default function Header() {
                     onClick={() => setBooksOpen(false)}
                     className={`flex items-center gap-2 px-4 py-2 text-sm transition ${
                       isActive(cat.href)
-                        ? "bg-[#0B8288] text-white"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-[#0B8288]"
+                        ? "bg-[#0B35C3] text-white"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-[#0B35C3]"
                     }`}
                   >
                     {cat.icon}
@@ -164,10 +173,19 @@ export default function Header() {
             href={programmingLink.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-[#0B8288] hover:text-[#0B8288]"
+            className="flex items-center border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-[#0B35C3] hover:text-[#0B35C3]"
             style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
           >
             <span className="flex items-center gap-1.5">{programmingLink.icon} {programmingLink.label}</span>
+          </a>
+
+          {/* Contact */}
+          <a
+            href={contactLink.href}
+            className="flex items-center border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-[#0B35C3] hover:text-[#0B35C3]"
+            style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
+          >
+            <span className="flex items-center gap-1.5">{contactLink.icon} {contactLink.label}</span>
           </a>
         </nav>
       </div>
@@ -196,7 +214,7 @@ export default function Header() {
                           onClick={() => setMenuOpen(false)}
                           className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
                             isActive(child.href)
-                              ? "bg-[#0B8288] text-white"
+                              ? "bg-[#0B35C3] text-white"
                               : "text-slate-700 hover:bg-slate-100"
                           }`}
                         >
@@ -224,7 +242,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className={`rounded-lg px-4 py-3 text-sm font-medium transition ${
                     isActive(item.href!)
-                      ? "bg-[#0B8288] text-white"
+                      ? "bg-[#0B35C3] text-white"
                       : "text-slate-700 hover:bg-slate-100"
                   }`}
                 >

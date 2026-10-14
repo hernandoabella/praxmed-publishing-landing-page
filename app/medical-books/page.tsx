@@ -1,10 +1,11 @@
 import BookGridPage from "../components/BookGridPage";
 import AudioDownload from "../components/BonusSection";
+import Testimonials from "../components/Testimonials";
 
 const books = [
   {
     title: "Medical Spanish",
-    image: "/book-mockupz.jpg",
+    image: "/books-frontpage/medical-spanish-for-healthcare-professionals.jpg",
     description:
       "Essential Spanish for healthcare professionals — phrases, patient history, emergency vocabulary, and clinical communication.",
     accent: "#C47A6B",
@@ -31,6 +32,7 @@ export default function MedicalBooksPage() {
         books={books}
       />
       <AudioDownload />
+      <Testimonials />
     </main>
   );
 }

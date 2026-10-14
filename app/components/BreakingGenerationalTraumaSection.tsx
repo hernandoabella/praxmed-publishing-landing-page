@@ -81,7 +81,7 @@ export default function BreakingGenerationalTraumaSection() {
             />
 
             <img
-              src="/breaking-generational-trauma-for-parents.jpg"
+              src="/books-frontpage/breaking-generational-trauma-for-parents.jpg"
               alt="Breaking Generational Trauma for Parents by M. Eliza Rowen"
               className="trauma-book-img relative z-10 w-full max-w-[360px] object-contain"
               style={{

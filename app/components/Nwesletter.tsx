@@ -39,10 +39,6 @@ export default function NewsletterEmbedded() {
       </Script>
 
       <section ref={sectionRef} className="w-full bg-[#0F2137] py-24 md:py-32 px-6 relative overflow-hidden">
-        {/* Ambient glows */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(11,130,136,0.10),transparent_70%)] blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(217,107,43,0.06),transparent_70%)] blur-3xl pointer-events-none" />
-
         <div className="news-head max-w-xl mx-auto flex flex-col items-center gap-8 text-center relative z-10">
 
           {/* Header */}

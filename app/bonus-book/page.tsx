@@ -3,7 +3,7 @@ import BookGridPage from "../components/BookGridPage";
 const giftBooks = [
   {
     title: "Juan Cigarron",
-    image: "/book-mockupz-2.png",
+    image: "/books-frontpage/juan-cigarron.jpg",
     description:
       "Bonus PDF book ready to share by email as a gift download for families and readers.",
     accent: "#E8773A",
@@ -21,7 +21,7 @@ const giftBooks = [
   },
   {
     title: "Cuentos Para Dormir",
-    image: "/cuentos-para-dormir.png",
+    image: "/books-frontpage/cuentos-para-dormir.png",
     description:
       "A bedtime bonus book that can be shared as part of your email gift flow.",
     accent: "#0B8288",
@@ -42,7 +42,7 @@ const giftBooks = [
 const previewBooks = [
   {
     title: "Raising Emotionally Intelligent Children",
-    image: "/raising.jpg",
+    image: "/books-frontpage/raising-emotionally-intelligent-children.jpg",
     description:
       "Preview the book online or go straight to Amazon for the full edition.",
     accent: "#1A7A8A",
@@ -60,7 +60,7 @@ const previewBooks = [
   },
   {
     title: "Anger Management for Explosive Parents",
-    image: "/book-mockup2.jpg",
+    image: "/books-frontpage/anger-managment-for-explosive-parents.jpg",
     description:
       "Includes a visible PDF preview plus a direct purchase link for readers who want the complete book.",
     accent: "#264C62",
@@ -78,7 +78,7 @@ const previewBooks = [
   },
   {
     title: "Manejo de la Ira Para Padres Explosivos",
-    image: "/manejo-de-la-ira.jpg",
+    image: "/books-frontpage/manejo-de-la-ira-para-padres-explosivos.jpg",
     description:
       "Spanish edition with a PDF preview and a direct link to the Amazon page.",
     accent: "#E8773A",
@@ -96,7 +96,7 @@ const previewBooks = [
   },
   {
     title: "Breaking Generational Trauma for Parents",
-    image: "/breaking-generational-trauma-for-parents.jpg",
+    image: "/books-frontpage/breaking-generational-trauma-for-parents.jpg",
     description:
       "A parent-focused guide with a live PDF preview and a direct Amazon purchase link.",
     accent: "#0B8288",

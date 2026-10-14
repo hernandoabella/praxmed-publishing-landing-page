@@ -19,7 +19,7 @@ const testimonials = [
     name: "Dr. Pedro Gomez",
     role: "Family Medicine Physician",
     quote:
-      "This book helped me communicate confidently with Spanish-speaking patients. The clinical cases are incredibly practical.",
+      "Communicate every patient confidently. The clinical cases are incredibly practical.",
     avatar: "/doc1.jpg"
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+const Testimonials = ({ transparent = false }: { transparent?: boolean } = {}) => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -98,12 +98,8 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0F2137] py-24 md:py-32 relative overflow-hidden"
+      className={`${transparent ? "bg-transparent" : "bg-[#0F2137]"} py-24 md:py-32 relative overflow-hidden`}
     >
-      {/* Ambient glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(11,130,136,0.12),transparent_70%)] blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(217,107,43,0.08),transparent_70%)] blur-3xl pointer-events-none" />
-
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="testi-head text-center mb-16">
           <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full mb-5">
@@ -127,39 +123,39 @@ const Testimonials = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="testi-card bg-white rounded-2xl p-7 md:p-8 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-[box-shadow,transform] duration-300 group flex flex-col"
+              className="testi-card bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-7 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:bg-white/[0.08] hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1.5 transition-[background-color,box-shadow,transform] duration-300 group flex flex-col"
             >
               <div className="mb-5">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#0B8288]/10 to-[#0B8288]/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FaQuoteLeft className="w-5 h-5 text-[#0B8288]" />
+                <div className="w-10 h-10 bg-[#0B8288]/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <FaQuoteLeft className="w-5 h-5 text-[#4FD1D4]" />
                 </div>
               </div>
 
               <div className="relative mb-6 flex-1">
-                <p className="text-gray-700 leading-relaxed text-[15px] pl-4 border-l-2 border-[#0B8288]/20">
+                <p className="text-white/75 leading-relaxed text-[15px] pl-4 border-l-2 border-[#0B8288]/30">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="h-px bg-gradient-to-r from-transparent via-[#0B8288]/20 to-transparent mb-5"></div>
+              <div className="h-px bg-white/10 mb-5"></div>
 
               <div className="flex items-center gap-3.5">
                 <div className="relative shrink-0">
-                  <div className="absolute -inset-1 bg-[#0B8288]/20 rounded-full opacity-60 blur-sm"></div>
+                  <div className="absolute -inset-1 bg-[#0B8288]/30 rounded-full opacity-60 blur-sm"></div>
                   <Image
                     src={item.avatar}
                     alt={item.name}
                     width={48}
                     height={48}
-                    className="rounded-full relative z-10 border-2 border-white shadow-md"
+                    className="rounded-full relative z-10 border-2 border-white/20 shadow-md"
                   />
                 </div>
 
                 <div>
-                  <p className="font-bold text-gray-900 text-sm">
+                  <p className="font-bold text-white text-sm">
                     {item.name}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-white/50">
                     {item.role}
                   </p>
                   <div className="flex items-center gap-1 mt-1">
@@ -168,7 +164,7 @@ const Testimonials = () => {
                         <FaStar key={i} className="w-3 h-3" />
                       ))}
                     </div>
-                    <span className="text-[10px] text-gray-400">5.0</span>
+                    <span className="text-[10px] text-white/40">5.0</span>
                   </div>
                 </div>
               </div>

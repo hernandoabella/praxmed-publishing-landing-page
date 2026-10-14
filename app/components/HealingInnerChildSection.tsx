@@ -81,7 +81,7 @@ export default function HealingInnerChildSection() {
             />
 
             <img
-              src="/ebook-portada-healing-your-inner-child.jpg"
+              src="/books-frontpage/healing-your-inner-child.jpg"
               alt="Healing Your Inner Child"
               className="heal-book-img relative z-10 w-full max-w-[360px] object-contain"
               style={{

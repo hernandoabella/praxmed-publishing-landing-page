@@ -122,7 +122,7 @@ export default function AnxiousAttachmentSection() {
             </div>
 
             <img
-              src="/anxius.jpg"
+              src="/books-frontpage/anxius-attachment-workbook.jpg"
               alt="Anxious Attachment Workbook For Parents by M. Eliza Rowen"
               className="book-img relative z-10 w-full max-w-[360px] h-auto object-contain"
               style={{

@@ -113,7 +113,7 @@ export default function AngerManagementSection() {
             </div>
 
             <img
-              src="/book-mockup2.jpg"
+              src="/books-frontpage/anger-managment-for-explosive-parents.jpg"
               alt="Anger Management for Explosive Parents"
               className="am-book-img relative z-10 w-full max-w-[340px] h-auto object-contain"
               style={{ filter: "drop-shadow(0 30px 60px rgba(38,76,98,0.22))" }}

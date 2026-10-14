@@ -123,7 +123,7 @@ export default function RaisingEISection() {
             </div>
 
             <img
-              src="/raising.jpg"
+              src="/books-frontpage/raising-emotionally-intelligent-children.jpg"
               alt="Raising Emotionally Intelligent Children by M. Eliza Rowen"
               className="book-img relative z-10 w-full max-w-[360px] h-auto object-contain"
               style={{

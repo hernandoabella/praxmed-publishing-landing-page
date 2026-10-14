@@ -11,7 +11,7 @@ const PRODUCT_CATALOG = [
       "Essential Spanish for healthcare professionals — phrases, patient history, emergency vocabulary, and clinical communication.",
     price: "$9.99 (Kindle) / $24.99 (Paperback)",
     url: "https://www.amazon.com/dp/B0G9VMBH6W",
-    image: "/book-mockupz.jpg",
+    image: "/books-frontpage/medical-spanish-for-healthcare-professionals.jpg",
   },
   {
     id: "anger-management",
@@ -20,7 +20,7 @@ const PRODUCT_CATALOG = [
       "Tools and step-by-step guidance for breaking yelling patterns and repairing trust after conflict.",
     price: "$0.99 (Kindle) / $9.99 (Paperback) / Free with Audible trial",
     url: "https://www.amazon.com/dp/B0GGJ3GPDF",
-    image: "/book-mockup2.jpg",
+    image: "/books-frontpage/anger-managment-for-explosive-parents.jpg",
   },
   {
     id: "raising-children",
@@ -29,7 +29,7 @@ const PRODUCT_CATALOG = [
       "A practical guide for helping parents nurture empathy, emotional awareness, and confidence in everyday family life.",
     price: "$9.99 (Kindle) / $24.99 (Paperback)",
     url: "https://www.amazon.com/dp/B0GKWC93RZ",
-    image: "/raising.jpg",
+    image: "/books-frontpage/raising-emotionally-intelligent-children.jpg",
   },
   {
     id: "breaking-trauma",
@@ -38,7 +38,7 @@ const PRODUCT_CATALOG = [
       "A parent-focused guide for recognizing inherited patterns, building healthier responses, and creating a safer family dynamic.",
     price: "$9.99 (Kindle) / $24.99 (Paperback)",
     url: "https://www.amazon.com/dp/B0FNX6ZC6C",
-    image: "/breaking-generational-trauma-for-parents.jpg",
+    image: "/books-frontpage/breaking-generational-trauma-for-parents.jpg",
   },
   {
     id: "anxious-attachment",
@@ -47,7 +47,7 @@ const PRODUCT_CATALOG = [
       "A supportive workbook for parents who want calmer responses, more emotional safety, and stronger connection at home.",
     price: "$9.99 (Kindle) / $19.99 (Paperback)",
     url: "https://www.amazon.com/dp/B0GQXCYHXZ",
-    image: "/anxius.jpg",
+    image: "/books-frontpage/anxius-attachment-workbook.jpg",
   },
   {
     id: "audiobook-anger",

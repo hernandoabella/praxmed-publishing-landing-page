@@ -9,7 +9,7 @@ const bonuses = [
     tag: "Workbook",
     description:
       "Fill-in exercises, reflection prompts, and guided practices to help you identify anxious patterns and build secure attachment with your child.",
-    image: "/anxius.jpg",
+    image: "/books-frontpage/anxius-attachment-workbook.jpg",
     color: "#514189",
     features: [
       "Attachment style self-assessment",
@@ -115,7 +115,7 @@ export default function BonusResources() {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-[260px] lg:w-[300px] shrink-0">
               <img
-                src="/anxius.jpg"
+                src="/books-frontpage/anxius-attachment-workbook.jpg"
                 alt="Anxious Attachment Workbook for Parents"
                 className="w-full h-64 md:h-full object-cover"
               />

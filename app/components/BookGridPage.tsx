@@ -28,6 +28,7 @@ type BookGridPageProps = {
   title: string;
   description: string;
   books: Book[];
+  whiteBackground?: boolean;
 };
 
 export default function BookGridPage({
@@ -35,6 +36,7 @@ export default function BookGridPage({
   title,
   description,
   books,
+  whiteBackground = false,
 }: BookGridPageProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -59,7 +61,7 @@ export default function BookGridPage({
     <section
       id="library"
       ref={sectionRef}
-      className="bg-[linear-gradient(180deg,var(--surface-cream)_0%,#ffffff_34%,var(--surface-mist)_100%)]"
+      className={whiteBackground ? "bg-white" : "bg-[linear-gradient(180deg,var(--surface-cream)_0%,#ffffff_34%,var(--surface-mist)_100%)]"}
     >
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="max-w-3xl">
