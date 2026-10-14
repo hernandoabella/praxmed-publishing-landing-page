@@ -1,5 +1,7 @@
 import BreakingGenerationalTraumaSection from "./components/BreakingGenerationalTraumaSection";
+import HealingAttachmentWoundsSection from "./components/HealingAttachmentWoundsSection";
 import HealingInnerChildSection from "./components/HealingInnerChildSection";
+import HealingToxicShameSection from "./components/HealingToxicShameSection";
 import BookGridPage from "./components/BookGridPage";
 import BonusSection from "./components/BonusSection";
 import Faq from "./components/Faq";
@@ -98,7 +100,7 @@ const featuredBooks = [
     actions: [
       {
         label: "Get on Amazon",
-        url: "#",
+        url: "https://us.amazon.com/Healing-Attachment-Wounds-Understand-Relationships-ebook/dp/B0HGPV3Z74",
       },
     ],
   },
@@ -111,7 +113,7 @@ const featuredBooks = [
     actions: [
       {
         label: "Get on Amazon",
-        url: "#",
+        url: "https://us.amazon.com/Healing-Toxic-Shame-Evidence-Based-Understanding-ebook/dp/B0HDHNL2V4",
       },
     ],
   },
@@ -127,6 +129,8 @@ export default function Home() {
         books={featuredBooks}
         whiteBackground
       />
+      <HealingToxicShameSection />
+      <HealingAttachmentWoundsSection />
       <Hero2 />
       <RaisingEISection />
       <Hero3 />

@@ -10,7 +10,7 @@ const Footer = () => {
             <p className="mb-4 text-xl font-semibold">Get in touch with us</p>
             <a
               href="mailto:contact@praxmedpublishing.com"
-              className="inline-flex items-center justify-center gap-3 text-lg font-medium text-[#4C8BFF] transition-colors duration-300 hover:text-[#8DA9FF]"
+              className="inline-flex items-center gap-2 text-[var(--brand-teal-bright)] transition hover:text-white"
             >
               <MdEmail className="text-xl" />
               contact@praxmedpublishing.com
@@ -27,7 +27,7 @@ const Footer = () => {
               <a
                 key={label}
                 href="#"
-                className="transform rounded-xl bg-white/5 p-3 text-2xl transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:text-[#4C8BFF]"
+                className="transform rounded-xl bg-white/5 p-3 text-2xl transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:text-[var(--brand-teal-bright)]"
                 aria-label={label}
               >
                 {icon}

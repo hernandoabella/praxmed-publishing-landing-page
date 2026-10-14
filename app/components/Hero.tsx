@@ -61,7 +61,7 @@ export default function HeroSection() {
           <h1 className="fade-up text-[clamp(2.4rem,4.5vw,3.6rem)] font-black text-white leading-[1.04] tracking-tight">
             Speak to every patient,
             <br />
-            <span className="text-[#1A9D9D]">
+            <span className="text-[var(--brand-teal-bright)]">
               confidently.
             </span>
           </h1>
@@ -75,14 +75,14 @@ export default function HeroSection() {
           <div className="fade-up flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
             <Link
               href="https://www.amazon.com/dp/B0G92L65ZB"
-              className="btn-cta-primary bg-[#0B8288] hover:bg-[#1A9D9D]"
+              className="btn-cta-primary bg-[var(--brand-teal)] hover:bg-[var(--brand-teal-dark)]"
             >
               <FaAmazon className="w-4 h-4" />
               Get the Book on Amazon
             </Link>
             <Link
               href="#library"
-              className="btn-cta-secondary border-white/20 bg-white/5 text-white hover:border-[#0B8288] hover:bg-white/10 hover:text-white"
+              className="btn-cta-secondary border-white/20 bg-white/5 text-white hover:border-[var(--brand-teal-bright)] hover:bg-white/10 hover:text-white"
             >
               Explore all books
             </Link>
@@ -91,7 +91,7 @@ export default function HeroSection() {
           <div className="fade-up flex items-center gap-2.5">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="w-4 h-4 text-[#1A9D9D]" />
+                <FaStar key={i} className="w-4 h-4 text-[var(--brand-teal-bright)]" />
               ))}
             </div>
             <span className="text-sm text-white/60">
@@ -120,7 +120,7 @@ export default function HeroSection() {
               key={label}
               className="hero-stat flex flex-col items-center gap-1.5 bg-[#0F2137] px-4 py-6 text-center"
             >
-              <Icon className="w-5 h-5 text-[#1A9D9D]" />
+              <Icon className="w-5 h-5 text-[var(--brand-teal-bright)]" />
               <span className="text-2xl font-black text-white">{value}</span>
               <span className="text-xs text-white/50 font-medium">{label}</span>
             </div>

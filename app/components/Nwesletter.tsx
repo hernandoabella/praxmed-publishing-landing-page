@@ -38,21 +38,18 @@ export default function NewsletterEmbedded() {
         `}
       </Script>
 
-      <section ref={sectionRef} className="w-full bg-[#0F2137] py-24 md:py-32 px-6 relative overflow-hidden">
+      <section ref={sectionRef} className="w-full bg-[#0F2137] px-6 py-20 md:py-28 relative overflow-hidden">
         <div className="news-head max-w-xl mx-auto flex flex-col items-center gap-8 text-center relative z-10">
 
           {/* Header */}
           <div className="flex flex-col items-center gap-4">
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-6 h-[2px] bg-[#0B8288]" />
-              <span className="text-[#0B8288] text-xs font-semibold tracking-[0.2em] uppercase">
-                Stay in the loop
-              </span>
+            <div className="eyebrow eyebrow-bright">
+              <span className="eyebrow-label">Stay in the loop</span>
             </div>
 
             <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold text-white leading-tight tracking-tight">
               Get free resources &<br />
-              <span className="text-[#0B8288]">early access</span> to new books.
+              <span className="text-[var(--brand-teal-bright)]">early access</span> to new books.
             </h2>
 
             <p className="text-white/40 text-sm leading-relaxed max-w-sm text-center">

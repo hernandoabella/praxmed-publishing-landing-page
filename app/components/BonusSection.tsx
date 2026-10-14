@@ -70,19 +70,16 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
   };
 
   return (
-    <section ref={containerRef} className={`w-full ${transparent ? "bg-transparent" : "bg-[#0F2137]"} py-16 md:py-24 px-6`}>
+    <section ref={containerRef} className={`w-full ${transparent ? "bg-transparent" : "bg-[#0F2137]"} px-6 py-20 md:py-28`}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="fade-up flex items-center gap-3 mb-4">
-          <div className="w-6 h-[2px] bg-[#0B8288]" />
-          <span className="text-[#0B8288] text-xs font-semibold tracking-[0.2em] uppercase">
-            Audio Library
-          </span>
+        <div className="fade-up eyebrow eyebrow-bright mb-5">
+          <span className="eyebrow-label">Audio Library</span>
         </div>
 
         <h2 className="fade-up text-[clamp(2rem,4vw,3rem)] font-bold text-white leading-tight tracking-tight mb-3">
-          Listen. Practice. <span className="text-[#0B8288]">Retain.</span>
+          Listen. Practice. <span className="text-[var(--brand-teal-bright)]">Retain.</span>
         </h2>
 
         <p className="fade-up text-white/50 text-base max-w-xl mb-14 leading-relaxed">
@@ -90,7 +87,7 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
         </p>
 
         {/* Main card */}
-        <div className="fade-up grid lg:grid-cols-12 gap-0 border border-white/10 rounded-sm overflow-hidden">
+        <div className="fade-up grid lg:grid-cols-12 gap-0 border border-white/10 rounded-3xl overflow-hidden">
 
           {/* Left: features */}
           <div className="lg:col-span-7 p-8 md:p-12 space-y-8">
@@ -98,7 +95,7 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
             <div className="grid sm:grid-cols-2 gap-3">
               {audioFeatures.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CheckCircle className="w-4 h-4 text-[#0B8288] flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[var(--brand-teal-bright)] flex-shrink-0" />
                   <span className="text-white/60 text-sm">{item}</span>
                 </div>
               ))}
@@ -108,7 +105,7 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
 
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Brain className="w-4 h-4 text-[#0B8288]" />
+                <Brain className="w-4 h-4 text-[var(--brand-teal-bright)]" />
                 <span className="text-sm font-semibold text-white">Why use the audio?</span>
               </div>
               <ul className="space-y-2 text-sm text-white/40">
@@ -151,7 +148,7 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
             <div className="px-8 md:px-12 pb-8 md:pb-12 flex flex-col gap-8">
 
             <div className="flex items-center gap-4">
-              <div className="w-11 h-11 bg-[#0B8288] flex items-center justify-center rounded-sm">
+              <div className="w-11 h-11 bg-[var(--brand-teal)] flex items-center justify-center rounded-2xl">
                 <Volume2 className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -169,7 +166,7 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
                 </div>
                 <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#0B8288] transition-all duration-300"
+                    className="h-full bg-[var(--brand-teal)] transition-all duration-300"
                     style={{ width: `${downloadProgress}%` }}
                   />
                 </div>
@@ -177,13 +174,13 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
             )}
 
             {!isDownloading && downloadProgress === 100 && (
-              <p className="text-sm text-[#0B8288] font-medium">All files downloaded!</p>
+              <p className="text-sm text-[var(--brand-teal-bright)] font-medium">All files downloaded!</p>
             )}
 
             <button
               onClick={handleDownloadAll}
               disabled={isDownloading}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#0F2137] text-sm font-bold tracking-wide hover:bg-[#0B8288] hover:text-white transition-colors duration-300 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(11,130,136,0.25)]"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#0F2137] text-sm font-bold tracking-wide hover:bg-[var(--brand-teal)] hover:text-white transition-colors duration-300 rounded-xl disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(15,127,130,0.32)]"
             >
               {isDownloading ? "Downloading…" : "Download All Tracks"}
               {!isDownloading && <Download className="w-4 h-4" />}

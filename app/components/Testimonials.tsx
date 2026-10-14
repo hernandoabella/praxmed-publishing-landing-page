@@ -98,7 +98,7 @@ const Testimonials = ({ transparent = false }: { transparent?: boolean } = {}) =
   return (
     <section
       ref={sectionRef}
-      className={`${transparent ? "bg-transparent" : "bg-[#0F2137]"} py-24 md:py-32 relative overflow-hidden`}
+      className={`${transparent ? "bg-transparent" : "bg-[#0F2137]"} py-20 md:py-28 relative overflow-hidden`}
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="testi-head text-center mb-16">
@@ -126,13 +126,13 @@ const Testimonials = ({ transparent = false }: { transparent?: boolean } = {}) =
               className="testi-card bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-7 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:bg-white/[0.08] hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1.5 transition-[background-color,box-shadow,transform] duration-300 group flex flex-col"
             >
               <div className="mb-5">
-                <div className="w-10 h-10 bg-[#0B8288]/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FaQuoteLeft className="w-5 h-5 text-[#4FD1D4]" />
+                <div className="w-10 h-10 bg-[var(--brand-teal)]/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <FaQuoteLeft className="w-5 h-5 text-[var(--brand-teal-bright)]" />
                 </div>
               </div>
 
               <div className="relative mb-6 flex-1">
-                <p className="text-white/75 leading-relaxed text-[15px] pl-4 border-l-2 border-[#0B8288]/30">
+                <p className="text-white/75 leading-relaxed text-[15px] pl-4 border-l-2 border-[var(--brand-teal)]/30">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
@@ -141,7 +141,7 @@ const Testimonials = ({ transparent = false }: { transparent?: boolean } = {}) =
 
               <div className="flex items-center gap-3.5">
                 <div className="relative shrink-0">
-                  <div className="absolute -inset-1 bg-[#0B8288]/30 rounded-full opacity-60 blur-sm"></div>
+                  <div className="absolute -inset-1 bg-[var(--brand-teal)]/30 rounded-full opacity-60 blur-sm"></div>
                   <Image
                     src={item.avatar}
                     alt={item.name}

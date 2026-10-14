@@ -61,17 +61,17 @@ export default function BookGridPage({
     <section
       id="library"
       ref={sectionRef}
-      className={whiteBackground ? "bg-white" : "bg-[linear-gradient(180deg,var(--surface-cream)_0%,#ffffff_34%,var(--surface-mist)_100%)]"}
+      className={whiteBackground ? "bg-white" : "bg-[var(--surface-soft)]"}
     >
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--brand-teal)]">
-              {eyebrow}
-            </p>
+            <div className="eyebrow mb-5">
+              <span className="eyebrow-label">{eyebrow}</span>
+            </div>
           ) : null}
           {title ? (
-            <h1 className="text-4xl font-bold tracking-tight text-[var(--brand-navy)] md:text-5xl">
+            <h1 className="text-[clamp(2rem,4vw,3rem)] font-black tracking-tight text-[var(--brand-navy)]">
               {title}
             </h1>
           ) : null}
@@ -86,43 +86,40 @@ export default function BookGridPage({
           {books.map((book) => (
             <article
               key={book.title}
-              className="book-card overflow-hidden rounded-[28px] border border-[var(--border-soft)] bg-white shadow-[0_24px_60px_rgba(21,48,71,0.08)] transition-shadow duration-300 hover:shadow-[0_32px_80px_rgba(21,48,71,0.14)]"
+              className="book-card group flex h-full flex-col overflow-hidden rounded-3xl border border-[var(--border-soft)] bg-white shadow-[0_24px_60px_rgba(21,48,71,0.08)] transition-shadow duration-300 hover:shadow-[0_32px_80px_rgba(21,48,71,0.14)]"
             >
-              <div
-                className="flex min-h-[240px] sm:min-h-[320px] items-center justify-center p-6 sm:p-8"
-                style={{
-                  background: `radial-gradient(circle at top, ${book.accent}20 0%, #ffffff 68%)`,
-                }}
-              >
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-[var(--surface-soft)]">
                 {book.image ? (
                   <Image
                     src={book.image}
                     alt={book.title}
-                    width={260}
-                    height={360}
-                    className="h-auto max-h-[280px] w-auto object-contain"
+                    fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="rounded-[24px] border border-dashed border-slate-300 bg-white/70 px-8 py-14 text-center">
-                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                      PDF Preview
-                    </p>
-                    <p className="mt-4 text-2xl font-bold leading-tight text-slate-900">
-                      {book.title}
-                    </p>
+                  <div className="flex h-full w-full items-center justify-center p-8">
+                    <div className="rounded-[24px] border border-dashed border-slate-300 bg-white/70 px-8 py-14 text-center">
+                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                        PDF Preview
+                      </p>
+                      <p className="mt-4 text-2xl font-bold leading-tight text-slate-900">
+                        {book.title}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
-              <div className="border-t border-slate-100 p-6 transition-colors duration-300 group-hover:bg-slate-50/50">
+              <div className="flex flex-1 flex-col border-t border-slate-100 p-6 transition-colors duration-300 group-hover:bg-slate-50/50">
                 {book.badge ? (
                   <div className="mb-4 inline-flex items-center rounded-full bg-[var(--brand-teal)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-teal)]">
                     {book.badge}
                   </div>
                 ) : null}
-                <h2 className="text-xl font-semibold text-[var(--brand-navy)]">
+                <h2 className="line-clamp-2 min-h-[3.5rem] text-xl font-semibold text-[var(--brand-navy)]">
                   {book.title}
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
+                <p className="mt-3 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-[var(--text-muted)]">
                   {book.description}
                 </p>
 
@@ -139,7 +136,7 @@ export default function BookGridPage({
                   </div>
                 ) : null}
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-5">
                   {book.actions.map((action) => (
                     <a
                       key={`${book.title}-${action.label}`}

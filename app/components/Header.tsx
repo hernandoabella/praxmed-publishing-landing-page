@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -69,6 +69,26 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [booksOpen, setBooksOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > lastY && y > 96) {
+        setHidden(true);
+        setBooksOpen(false);
+        setMenuOpen(false);
+      } else if (y < lastY) {
+        setHidden(false);
+      }
+      lastY = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -81,7 +101,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         <Link href="/" className="flex items-center gap-3 text-slate-900">
           {/* width/height match the real 2800x1653 aspect ratio, and `sizes`
@@ -92,9 +112,9 @@ export default function Header() {
             alt="PRAXMED Publishing logo"
             width={560}
             height={330}
-            sizes="(min-width: 768px) 136px, 68px"
+            sizes="(min-width: 768px) 196px, 112px"
             quality={90}
-            className="h-10 w-[68px] object-contain md:h-20 md:w-[136px] drop-shadow-none"
+            className="h-14 w-auto object-contain md:h-20"
           />
         </Link>
 
@@ -106,58 +126,51 @@ export default function Header() {
           {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        <nav className="hidden items-stretch self-stretch md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {topNavItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`flex items-center border px-4 text-sm font-medium transition ${
+              className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition ${
                 isActive(item.href)
-                  ? "border-[#0B35C3] bg-[#0B35C3] text-white"
-                  : "border-slate-200 text-slate-700 hover:border-[#0B35C3] hover:text-[#0B35C3]"
+                  ? "bg-[var(--brand-teal)]/10 text-[var(--brand-teal)]"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-[var(--brand-teal)]"
               }`}
-              style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
             >
-              <span className="flex items-center gap-1.5">{item.icon} {item.label}</span>
+              {item.icon} {item.label}
             </Link>
           ))}
 
           {/* Books Dropdown */}
           <div
-            className="relative flex items-stretch"
+            className="relative"
             onMouseEnter={() => setBooksOpen(true)}
             onMouseLeave={() => setBooksOpen(false)}
           >
             <Link
               href="/childrens-books"
-              className={`flex items-center border px-4 text-sm font-medium transition ${
+              className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition ${
                 isBooksActive()
-                  ? "border-[#0B35C3] bg-[#0B35C3] text-white"
-                  : "border-slate-200 text-slate-700 hover:border-[#0B35C3] hover:text-[#0B35C3]"
+                  ? "bg-[var(--brand-teal)]/10 text-[var(--brand-teal)]"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-[var(--brand-teal)]"
               }`}
-              style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
             >
-              <span className="flex items-center gap-1.5">
-                <FaBook className="h-3.5 w-3.5" />
-                Books <FaChevronDown className="ml-1 h-3 w-3" />
-              </span>
+              <FaBook className="h-3.5 w-3.5" />
+              Books <FaChevronDown className="ml-0.5 h-3 w-3" />
             </Link>
 
             {/* Dropdown Menu */}
             {booksOpen && (
-              <div
-                className="absolute top-full left-0 mt-0.5 flex w-56 min-w-[220px] flex-col rounded-lg border border-slate-200 bg-white py-2 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-                style={{ zIndex: 100 }}
-              >
+              <div className="absolute left-0 top-full z-[100] mt-1 flex w-56 min-w-[220px] flex-col rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_12px_40px_rgba(21,48,71,0.14)]">
                 {bookCategories.map((cat) => (
                   <Link
                     key={cat.label}
                     href={cat.href}
                     onClick={() => setBooksOpen(false)}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm transition ${
+                    className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm transition ${
                       isActive(cat.href)
-                        ? "bg-[#0B35C3] text-white"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-[#0B35C3]"
+                        ? "bg-[var(--brand-teal)]/10 text-[var(--brand-teal)]"
+                        : "text-slate-600 hover:bg-slate-50 hover:text-[var(--brand-teal)]"
                     }`}
                   >
                     {cat.icon}
@@ -173,19 +186,17 @@ export default function Header() {
             href={programmingLink.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-[#0B35C3] hover:text-[#0B35C3]"
-            style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
+            className="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-[var(--brand-teal)]"
           >
-            <span className="flex items-center gap-1.5">{programmingLink.icon} {programmingLink.label}</span>
+            {programmingLink.icon} {programmingLink.label}
           </a>
 
           {/* Contact */}
           <a
             href={contactLink.href}
-            className="flex items-center border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-[#0B35C3] hover:text-[#0B35C3]"
-            style={{ clipPath: "polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)" }}
+            className="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-[var(--brand-teal)]"
           >
-            <span className="flex items-center gap-1.5">{contactLink.icon} {contactLink.label}</span>
+            {contactLink.icon} {contactLink.label}
           </a>
         </nav>
       </div>
@@ -199,7 +210,7 @@ export default function Header() {
                 <div key={item.label}>
                   <button
                     onClick={() => setBooksOpen(!booksOpen)}
-                    className="flex w-full items-center gap-2 rounded-lg px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+                    className="flex w-full items-center gap-2 rounded-xl px-4 py-3 text-left text-sm font-medium text-slate-600 transition hover:bg-slate-100"
                   >
                     {item.icon}
                     <span>{item.label}</span>
@@ -214,7 +225,7 @@ export default function Header() {
                           onClick={() => setMenuOpen(false)}
                           className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
                             isActive(child.href)
-                              ? "bg-[#0B35C3] text-white"
+                              ? "bg-[var(--brand-teal)]/10 text-[var(--brand-teal)]"
                               : "text-slate-700 hover:bg-slate-100"
                           }`}
                         >
@@ -231,7 +242,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100"
                 >
                   <span className="flex items-center gap-2">{item.icon} {item.label}</span>
                 </a>
@@ -240,10 +251,10 @@ export default function Header() {
                   key={item.label}
                   href={item.href!}
                   onClick={() => setMenuOpen(false)}
-                  className={`rounded-lg px-4 py-3 text-sm font-medium transition ${
+                  className={`rounded-xl px-4 py-3 text-sm font-medium transition ${
                     isActive(item.href!)
-                      ? "bg-[#0B35C3] text-white"
-                      : "text-slate-700 hover:bg-slate-100"
+                      ? "bg-[var(--brand-teal)]/10 text-[var(--brand-teal)]"
+                      : "text-slate-600 hover:bg-slate-100"
                   }`}
                 >
                   <span className="flex items-center gap-2">{item.icon} {item.label}</span>
