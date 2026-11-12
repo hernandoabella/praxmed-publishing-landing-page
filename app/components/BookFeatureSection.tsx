@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -67,9 +68,11 @@ export default function BookFeatureSection({
     >
       <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className={`flex justify-center ${reverse ? "lg:order-2" : ""}`}>
-          <img
+          <Image
             src={image}
             alt={imageAlt}
+            width={340}
+            height={510}
             className="bfs-book-img w-full max-w-[340px] object-contain"
             style={{ filter: "drop-shadow(0 24px 40px rgba(21,48,71,0.16))" }}
           />

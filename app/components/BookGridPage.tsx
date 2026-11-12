@@ -123,18 +123,6 @@ export default function BookGridPage({
                   {book.description}
                 </p>
 
-                {book.previewPdf ? (
-                  <div className="mt-5 overflow-hidden rounded-[20px] border border-slate-200 bg-slate-50">
-                    <div className="border-b border-slate-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                      Preview
-                    </div>
-                    <iframe
-                      src={`${book.previewPdf}#toolbar=0&navpanes=0&scrollbar=0&page=1&view=FitH`}
-                      title={`Preview of ${book.title}`}
-                      className="h-64 w-full bg-white"
-                    />
-                  </div>
-                ) : null}
 
                 <div className="mt-auto flex flex-wrap gap-2 pt-5">
                   {book.actions.map((action) => (

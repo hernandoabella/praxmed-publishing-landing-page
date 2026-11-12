@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { FaAmazon, FaStar } from "react-icons/fa";
@@ -103,9 +104,11 @@ export default function HeroSection() {
 
         {/* Libro */}
         <div className="relative flex items-center justify-center order-1 lg:order-2 py-6">
-          <img
+          <Image
             src="/books-frontpage/medical-spanish-for-healthcare-professionals.jpg"
             alt="Medical Spanish Book"
+            width={320}
+            height={480}
             className="book-img relative z-10 w-[70%] md:w-[62%] lg:w-[78%] max-w-[320px] h-auto object-contain"
             style={{ filter: "drop-shadow(0 30px 60px rgba(15,33,55,0.22))" }}
           />

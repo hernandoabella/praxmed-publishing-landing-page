@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, ComponentPropsWithoutRef } from "react";
 
 // Custom Callout component
 function Callout({ children, type = "info" }: { children: ReactNode; type?: "tip" | "warning" | "heart" | "info" }) {
@@ -40,9 +40,9 @@ function Blockquote({ children }: { children: ReactNode }) {
 export const MDXComponents = {
   Callout,
   Blockquote,
-  a: ({ href, children, ...props }: any) => {
-    const isInternal = href?.startsWith("/");
-    if (isInternal) {
+  a: ({ href, children, ...props }: ComponentPropsWithoutRef<"a">) => {
+    const isInternal = typeof href === "string" && href.startsWith("/");
+    if (isInternal && typeof href === "string") {
       return (
         <Link href={href} {...props}>
           {children}
@@ -55,28 +55,28 @@ export const MDXComponents = {
       </a>
     );
   },
-  img: ({ src, alt, ...props }: any) => (
+  img: ({ src, alt, width, height, ...props }: ComponentPropsWithoutRef<"img">) => (
     <Image
-      src={src}
+      src={typeof src === "string" ? src : ""}
       alt={alt || "Image"}
-      width={800}
-      height={400}
+      width={typeof width === "number" ? width : 800}
+      height={typeof height === "number" ? height : 400}
       className="rounded-lg"
       {...props}
     />
   ),
-  pre: ({ children, ...props }: any) => (
+  pre: ({ children, ...props }: ComponentPropsWithoutRef<"pre">) => (
     <pre className="overflow-x-auto rounded-lg bg-gray-900 p-4" {...props}>
       {children}
     </pre>
   ),
-  code: ({ children, ...props }: any) => (
+  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => (
     <code className="rounded bg-gray-100 px-1 py-0.5 text-sm font-mono" {...props}>
       {children}
     </code>
   ),
-  h2: ({ children, ...props }: any) => {
-    const id = children.toString().toLowerCase().replace(/\s+/g, "-");
+  h2: ({ children, ...props }: ComponentPropsWithoutRef<"h2">) => {
+    const id = String(children ?? "").toLowerCase().replace(/\s+/g, "-");
     return (
       <h2 id={id} className="group relative" {...props}>
         {children}

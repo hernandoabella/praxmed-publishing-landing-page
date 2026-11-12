@@ -97,7 +97,7 @@ const WhatYouWillLearn = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What You'll <span className="text-[#002EC1]">Learn</span>
+            What You&apos;ll <span className="text-[#002EC1]">Learn</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

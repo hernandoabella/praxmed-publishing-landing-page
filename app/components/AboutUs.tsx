@@ -71,7 +71,8 @@ const AboutUsSection = () => {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Breaking Barriers</h3>
             <p className="text-gray-600">
-              We're committed to eliminating language obstacles in healthcare, 
+We&apos;re committed to eliminating language obstacles in healthcare,
+
               creating tools that build bridges between providers and diverse patient populations.
             </p>
           </div>

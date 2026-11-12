@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -20,6 +22,25 @@ export const metadata: Metadata = {
   title: "PRAXMED Publishing — Medical Spanish & Parenting Books",
   description:
     "Practical, evidence-based books and audiobooks for healthcare professionals and parents. Medical Spanish, anger management, emotional intelligence, and generational healing resources.",
+  metadataBase: new URL("https://praxmedpublishing.com"),
+  openGraph: {
+    title: "PRAXMED Publishing — Medical Spanish & Parenting Books",
+    description:
+      "Practical, evidence-based books and audiobooks for healthcare professionals and parents.",
+    type: "website",
+    locale: "en_US",
+    siteName: "PRAXMED Publishing",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PRAXMED Publishing — Medical Spanish & Parenting Books",
+    description:
+      "Practical, evidence-based books and audiobooks for healthcare professionals and parents.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 // Makes the layout viewport shrink when the mobile keyboard opens so the
@@ -46,6 +67,23 @@ export default function RootLayout({
 
         {/* Keeps scroll-reveal animations firing after images/fonts load */}
         <ScrollSync />
+        <Analytics />
+        <SpeedInsights />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PRAXMED Publishing",
+              url: "https://praxmedpublishing.com",
+              logo: "https://praxmedpublishing.com/logo.png",
+              description:
+                "Practical, evidence-based books and audiobooks for healthcare professionals and parents.",
+            }),
+          }}
+        />
 
         <Script id="mailerlite-auto-show" strategy="afterInteractive">
           {`

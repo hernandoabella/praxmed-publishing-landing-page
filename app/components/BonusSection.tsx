@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Download, CheckCircle, Volume2, Smartphone, Car, PlayCircle, Brain } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -136,10 +137,12 @@ const AudioDownload = ({ transparent = false }: { transparent?: boolean }) => {
 
             {/* Doctor image */}
             <div className="relative w-full h-52 overflow-hidden">
-              <img
+              <Image
                 src="/doctor_with_headphones.png"
                 alt="Doctor using audio library"
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="100vw"
+                className="object-cover object-top"
               />
               {/* Gradient fade into the panel below */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0F2137]/80" />

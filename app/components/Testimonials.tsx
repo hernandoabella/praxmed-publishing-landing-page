@@ -19,7 +19,7 @@ const testimonials = [
     name: "Dr. Pedro Gomez",
     role: "Family Medicine Physician",
     quote:
-      "Communicate every patient confidently. The clinical cases are incredibly practical.",
+      "Communicate confidently with every patient. The clinical cases are incredibly practical.",
     avatar: "/doc1.jpg"
   },
   {

@@ -59,6 +59,7 @@ export default function RetailerLogos() {
               rel="noopener noreferrer"
               className="retailer-logo group relative block"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={shop.logo} 
                 alt={`${shop.name} logo`} 

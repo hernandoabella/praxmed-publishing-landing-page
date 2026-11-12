@@ -1,48 +1,52 @@
+import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0F2137] px-6 py-16 md:py-20 text-white relative overflow-hidden">
-      <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="mb-12 flex flex-col items-center justify-between gap-10 lg:flex-row">
-          <div className="text-center lg:text-left">
-            <p className="mb-4 text-xl font-semibold">Get in touch with us</p>
-            <a
-              href="mailto:contact@praxmedpublishing.com"
-              className="inline-flex items-center gap-2 text-[var(--brand-teal-bright)] transition hover:text-white"
-            >
-              <MdEmail className="text-xl" />
-              contact@praxmedpublishing.com
-            </a>
+    <footer className="bg-[#0B1F3A] text-white">
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div>
+            <div className="inline-block rounded-xl bg-white px-4 py-3">
+              <Image
+                src="/logo.png"
+                alt="PRAXMED Publishing"
+                width={280}
+                height={165}
+                className="h-20 w-auto"
+              />
+            </div>
+            <div className="mt-5 flex gap-3">
+              {[
+                { icon: <FaFacebook />, label: "Facebook", href: "#" },
+                { icon: <FaTwitter />, label: "Twitter", href: "#" },
+                { icon: <FaLinkedin />, label: "LinkedIn", href: "#" },
+                { icon: <FaInstagram />, label: "Instagram", href: "#" },
+              ].map(({ icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="rounded-lg bg-white/5 p-2.5 text-lg text-white/70 transition hover:bg-white/10 hover:text-white"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div className="flex justify-center gap-3 md:gap-5 flex-wrap">
-            {[
-              { icon: <FaFacebook />, label: "Facebook" },
-              { icon: <FaTwitter />, label: "Twitter" },
-              { icon: <FaLinkedin />, label: "LinkedIn" },
-              { icon: <FaInstagram />, label: "Instagram" },
-            ].map(({ icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                className="transform rounded-xl bg-white/5 p-3 text-2xl transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:text-[var(--brand-teal-bright)]"
-                aria-label={label}
-              >
-                {icon}
-              </a>
-            ))}
-          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/70">
+            <Link href="/book-catalog" className="transition hover:text-white">Catalog</Link>
+            <Link href="/about-us" className="transition hover:text-white">About Us</Link>
+            <Link href="/medical-spanish" className="transition hover:text-white">Medical Spanish</Link>
+            <Link href="/blog" className="transition hover:text-white">Blog</Link>
+            <a href="mailto:contact@praxmedpublishing.com" className="transition hover:text-white">Contact</a>
+          </nav>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-base text-white/80">
-            © {new Date().getFullYear()} PRAXMED Publishing. All rights reserved.
-          </p>
-          <p className="mt-2 text-sm text-white/40">
-            Empowering healthcare through innovative medical publishing
-          </p>
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/40">
+          <p>© {new Date().getFullYear()} PRAXMED Publishing. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 
 const bonuses = [
@@ -114,9 +115,11 @@ export default function BonusResources() {
         <div className="fade-el rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden mb-6">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-[260px] lg:w-[300px] shrink-0">
-              <img
+              <Image
                 src="/books-frontpage/anxius-attachment-workbook.jpg"
                 alt="Anxious Attachment Workbook for Parents"
+                width={300}
+                height={400}
                 className="w-full h-64 md:h-full object-cover"
               />
             </div>
